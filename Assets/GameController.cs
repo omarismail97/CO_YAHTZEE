@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
     public Sprite[] diceImages = new Sprite[6];
     public GameObject[] diceObjects = new GameObject[5];
     
-    private int[] dieValues = { 1, 1, 6, 1, 1};
+    //initialize dice
+    private int[] dieValues = { 1, 2, 3, 4, 5};
 
     // Start is called before the first frame update
     void Start()
