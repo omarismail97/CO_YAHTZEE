@@ -1,2 +1,2 @@
 # CO_YAHTZEE
- Caffeine Overflow's Implmentation of Yahtzee++
+ Caffeine Overflow's Implementation of Yahtzee++
