@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Testing changes to Git */
 public class GameController : MonoBehaviour
 {
     public Sprite[] diceImages = new Sprite[6];
