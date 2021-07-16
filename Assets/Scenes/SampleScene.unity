@@ -241,6 +241,8 @@ GameObject:
   - component: {fileID: 53746967}
   - component: {fileID: 53746969}
   - component: {fileID: 53746968}
+  - component: {fileID: 53746970}
+  - component: {fileID: 53746971}
   m_Layer: 0
   m_Name: Die (2)
   m_TagString: Untagged
@@ -305,6 +307,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53746966}
   m_CullTransparentMesh: 1
+--- !u!114 &53746970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53746966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHold: 0
+  dieValue: 3
+--- !u!114 &53746971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53746966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 53746970}
+          m_TargetAssemblyTypeName: Die, Assembly-CSharp
+          m_MethodName: toggleDice
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &79058648
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +361,8 @@ GameObject:
   - component: {fileID: 79058649}
   - component: {fileID: 79058651}
   - component: {fileID: 79058650}
+  - component: {fileID: 79058652}
+  - component: {fileID: 79058653}
   m_Layer: 0
   m_Name: Die (3)
   m_TagString: Untagged
@@ -380,6 +427,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79058648}
   m_CullTransparentMesh: 1
+--- !u!114 &79058652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79058648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHold: 0
+  dieValue: 4
+--- !u!114 &79058653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79058648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 79058652}
+          m_TargetAssemblyTypeName: Die, Assembly-CSharp
+          m_MethodName: toggleDice
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &185475391
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +629,7 @@ GameObject:
   - component: {fileID: 210961334}
   - component: {fileID: 210961333}
   m_Layer: 0
-  m_Name: Text (2)
+  m_Name: Threes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,8 +709,10 @@ GameObject:
   - component: {fileID: 215812098}
   - component: {fileID: 215812100}
   - component: {fileID: 215812099}
+  - component: {fileID: 215812102}
+  - component: {fileID: 215812101}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Ones Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,9 +770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: 5
 --- !u!222 &215812100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -689,6 +779,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215812097}
   m_CullTransparentMesh: 1
+--- !u!114 &215812101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215812097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 215812102}
+          m_TargetAssemblyTypeName: Score, Assembly-CSharp
+          m_MethodName: selectScore
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &215812102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215812097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c962a2c39515542baf957ec72dd9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!1 &237100523
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +992,8 @@ GameObject:
   - component: {fileID: 258202780}
   - component: {fileID: 258202782}
   - component: {fileID: 258202781}
+  - component: {fileID: 258202783}
+  - component: {fileID: 258202784}
   m_Layer: 0
   m_Name: Die (4)
   m_TagString: Untagged
@@ -924,6 +1058,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258202779}
   m_CullTransparentMesh: 1
+--- !u!114 &258202783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258202779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHold: 0
+  dieValue: 5
+--- !u!114 &258202784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258202779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 258202783}
+          m_TargetAssemblyTypeName: Die, Assembly-CSharp
+          m_MethodName: toggleDice
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &360366485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2704,7 @@ GameObject:
   - component: {fileID: 1228840384}
   - component: {fileID: 1228840383}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Ones Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2594,6 +2771,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228840381}
   m_CullTransparentMesh: 1
+--- !u!1 &1379067076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379067078}
+  - component: {fileID: 1379067077}
+  m_Layer: 0
+  m_Name: ScorecardController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1379067077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379067076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d460e2edbbce6d448c3ff3eb5c1873b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 0
+--- !u!4 &1379067078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379067076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43614432, y: 0.8322018, z: 122.13509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1384664067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,6 +3474,8 @@ GameObject:
   - component: {fileID: 1632157672}
   - component: {fileID: 1632157674}
   - component: {fileID: 1632157673}
+  - component: {fileID: 1632157675}
+  - component: {fileID: 1632157676}
   m_Layer: 0
   m_Name: Die (1)
   m_TagString: Untagged
@@ -3317,6 +3540,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632157671}
   m_CullTransparentMesh: 1
+--- !u!114 &1632157675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632157671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHold: 0
+  dieValue: 2
+--- !u!114 &1632157676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632157671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1632157675}
+          m_TargetAssemblyTypeName: Die, Assembly-CSharp
+          m_MethodName: toggleDice
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1719862755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3836,7 @@ GameObject:
   - component: {fileID: 1844676837}
   - component: {fileID: 1844676836}
   m_Layer: 0
-  m_Name: Text (1)
+  m_Name: Twos Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3722,8 +3988,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2131904534}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+      - m_Target: {fileID: 2086239509}
+        m_TargetAssemblyTypeName: DiceController, Assembly-CSharp
         m_MethodName: rollDice
         m_Mode: 1
         m_Arguments:
@@ -3783,6 +4049,8 @@ GameObject:
   - component: {fileID: 2049784583}
   - component: {fileID: 2049784585}
   - component: {fileID: 2049784584}
+  - component: {fileID: 2049784586}
+  - component: {fileID: 2049784587}
   m_Layer: 0
   m_Name: Die
   m_TagString: Untagged
@@ -3847,6 +4115,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049784582}
   m_CullTransparentMesh: 1
+--- !u!114 &2049784586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049784582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHold: 0
+  dieValue: 1
+--- !u!114 &2049784587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049784582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2049784586}
+          m_TargetAssemblyTypeName: Die, Assembly-CSharp
+          m_MethodName: toggleDice
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2086239508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086239510}
+  - component: {fileID: 2086239509}
+  m_Layer: 0
+  m_Name: DiceController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2086239509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086239508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b9738b960911f47b0235fae31e2b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceImages:
+  - {fileID: 21300000, guid: f6cf63418093c4f999205bb64930063f, type: 3}
+  - {fileID: 21300000, guid: 462eb9cf055d4423bbdd113f05c5e3e0, type: 3}
+  - {fileID: 21300000, guid: e85e085304bb94333a55271bb7a98eab, type: 3}
+  - {fileID: 21300000, guid: bbea25f27f82041db88a899ad38a8639, type: 3}
+  - {fileID: 21300000, guid: 24b8ecf0b5daf4067b2212910b16c39d, type: 3}
+  - {fileID: 21300000, guid: 0ab6b419210b24529a1abadc172a17b0, type: 3}
+  diceObjects:
+  - {fileID: 2049784586}
+  - {fileID: 1632157675}
+  - {fileID: 53746970}
+  - {fileID: 79058652}
+  - {fileID: 258202783}
+  rollCounter: 3
+--- !u!4 &2086239510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086239508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43614432, y: 0.8322018, z: 122.13509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086972871
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4476,7 @@ GameObject:
   - component: {fileID: 2131904535}
   - component: {fileID: 2131904534}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4123,22 +4491,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2131904533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec6cefcba6244e088a715060f423719, type: 3}
+  m_Script: {fileID: 11500000, guid: 7467a66903b572f499c796b0e8687eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diceImages:
-  - {fileID: 21300000, guid: f6cf63418093c4f999205bb64930063f, type: 3}
-  - {fileID: 21300000, guid: 462eb9cf055d4423bbdd113f05c5e3e0, type: 3}
-  - {fileID: 21300000, guid: e85e085304bb94333a55271bb7a98eab, type: 3}
-  - {fileID: 21300000, guid: bbea25f27f82041db88a899ad38a8639, type: 3}
-  - {fileID: 21300000, guid: 24b8ecf0b5daf4067b2212910b16c39d, type: 3}
-  - {fileID: 21300000, guid: 0ab6b419210b24529a1abadc172a17b0, type: 3}
-  diceObjects:
-  - {fileID: 2049784582}
-  - {fileID: 1632157671}
-  - {fileID: 53746966}
-  - {fileID: 79058648}
-  - {fileID: 258202779}
+  isHold: 0
+  dieValue: 1
 --- !u!4 &2131904535
 Transform:
   m_ObjectHideFlags: 0
