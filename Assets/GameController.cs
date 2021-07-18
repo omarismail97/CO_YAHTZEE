@@ -24,7 +24,6 @@ public class GameController : MonoBehaviour
         for (int i = 0; i<diceObjects.Length; i++){
              diceObjects[i].GetComponent<Image>().sprite = diceImages[dieValues[i]-1];
         }
-        
     }
 
     public void rollDice(){
@@ -32,4 +31,5 @@ public class GameController : MonoBehaviour
             dieValues[i] = Random.Range(1,7);
         }
     }
+
 }
