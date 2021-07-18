@@ -37,3 +37,5 @@ sysinfo.txt
 *.unitypackage
 
 .DS_Store
+Logs/AssetImportWorker0.log
+*.log
