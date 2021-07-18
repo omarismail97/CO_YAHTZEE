@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
-    public GameObject gmObjInputField;
+    public InputField gmObjInputField;
     public static string playerName;
 
 
@@ -20,16 +20,17 @@ public class Login : MonoBehaviour
         Debug.Log("Player Entry");
 
 
-        InputField input = this.GetComponentInChildren<InputField>();
-        if (input != null)
+
+        InputField inputFieldName = this.GetComponentInChildren<InputField>();
+        if (inputFieldName != null)
         {
-            playerName = input.text;
-            Debug.Log("Player Entry " + input.text);
+            playerName = inputFieldName.text;
+            Debug.Log("Player Entry " + inputFieldName.text);
         }
 
+        gmObjInputField = inputFieldName;
 
-
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
     // Start is called before the first frame update
