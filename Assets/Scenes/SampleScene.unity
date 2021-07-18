@@ -2687,6 +2687,7 @@ GameObject:
   - component: {fileID: 898990574}
   - component: {fileID: 898990573}
   - component: {fileID: 898990572}
+  - component: {fileID: 898990575}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -2784,6 +2785,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &898990575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898990570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b92501981bd84794cb3b0509432f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gmObjInputField: {fileID: 0}
 --- !u!1 &923580852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4671,7 +4685,8 @@ MonoBehaviour:
   chatBox: {fileID: 1723385832}
   playerMessage: {r: 1, g: 1, b: 1, a: 1}
   info: {r: 0.7921569, g: 0.7768263, b: 0.09411762, a: 1}
-  username: Madison
+  username: 
+  userID: 
   messageList: []
 --- !u!4 &1781073298
 Transform:
