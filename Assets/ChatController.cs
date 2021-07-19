@@ -42,6 +42,7 @@ public class ChatController : MonoBehaviour
             }
         }
 
+        /*
         if (!chatBox.isFocused)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -50,6 +51,7 @@ public class ChatController : MonoBehaviour
              Debug.Log("Space");
             }
         }
+        */
     }
 
     public void SendMessageToChat(string text, Message.MessageType messageType)
