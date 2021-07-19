@@ -751,7 +751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000043996224, y: 0}
+  m_AnchoredPosition: {x: 0.000049857463, y: 0}
   m_SizeDelta: {x: 292.14, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &131725347
@@ -1145,6 +1145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelected: 0
+  currentDice:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &237100523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,7 +4053,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 797854717}
   m_HandleRect: {fileID: 797854716}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4122,6 +4128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 0
   diceController: {fileID: 0}
+  currentDice:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1379067078
 Transform:
   m_ObjectHideFlags: 0
@@ -6288,13 +6300,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2048570668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639397dfeac214c209a3dd545903bfd8, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMessages: 25
-  chatPanel: {fileID: 131725345}
-  textObject: {fileID: 605336837060382225, guid: 3cdfb367d295a425096debce0430160d, type: 3}
-  messageList: []
 --- !u!4 &2048570670
 Transform:
   m_ObjectHideFlags: 0
@@ -6471,7 +6479,6 @@ MonoBehaviour:
   - {fileID: 53746970}
   - {fileID: 79058652}
   - {fileID: 258202783}
-  rollCounter: 3
 --- !u!4 &2086239510
 Transform:
   m_ObjectHideFlags: 0
