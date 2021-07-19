@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ChatController : MonoBehaviour
 {
-    public int maxMessages = 25;
+    public static int maxMessages = 1000;
 
     public GameObject chatPanel, textObject;
     public InputField chatBox;
