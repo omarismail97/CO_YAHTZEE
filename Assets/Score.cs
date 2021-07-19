@@ -23,7 +23,6 @@ public class Score : MonoBehaviour
     public void selectScore()
     {
         isSelected = true;
-        this.GetComponent<Text>().text = "5";
     }
 
     public void calculateScore()
@@ -56,8 +55,22 @@ public class Score : MonoBehaviour
                 this.GetComponent<Text>().text = diceScore.ToString();
 
             }
+            if (gameObject.name == "Threes")
+            {
+                diceScore = 0;
+                foreach (Die die in currentDice)
+                {
+                    if (die.dieValue == 3)
+                    {
+                        diceScore = diceScore + die.dieValue;
+                    }
+                }
+                this.GetComponent<Text>().text = diceScore.ToString();
+
+            }
         }
     }
+
 
     void Update()
     {
