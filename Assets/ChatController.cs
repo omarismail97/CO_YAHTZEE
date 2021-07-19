@@ -30,8 +30,11 @@ public class ChatController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                TranscriptController transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
                 SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                 chatBox.text = "";
+
+                transcriptController.SendMessageToTranscript(username + " sent a message in the chat.");
             }
         }
         else 
