@@ -20,7 +20,8 @@ public class TranscriptController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        ChatController chatController = GameObject.Find("ChatController").GetComponent<ChatController>();
+        if (!chatController.chatBox.isFocused && Input.GetKeyDown(KeyCode.Space))
         {
             SendMessageToTranscript("You pressed the space key!");
         }
