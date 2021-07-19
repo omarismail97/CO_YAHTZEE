@@ -4121,11 +4121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 0
-<<<<<<< HEAD
   diceController: {fileID: 0}
-=======
-  diceController: {fileID: 2086239509}
->>>>>>> 847d39e77c1316b18da8ac2d443054ebfd75469b
 --- !u!4 &1379067078
 Transform:
   m_ObjectHideFlags: 0
