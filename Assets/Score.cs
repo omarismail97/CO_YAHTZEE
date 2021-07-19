@@ -31,19 +31,40 @@ public class Score : MonoBehaviour
     }
     public void selectScore()
     {
-        isSelected = true;
+        if ( ! string.IsNullOrEmpty(this.GetComponent<Text>().text))
+        {
+            isSelected = true;
+        }
+
     }
 
     public void calculateScore()
     {
-        if (! isSelected && UpperScoreKey.ContainsKey(gameObject.name)) {
-            diceScore = 0;
-            foreach (Die die in currentDice){
-                if (die.dieValue == UpperScoreKey[gameObject.name] ){
-                    diceScore = diceScore + die.dieValue;
+        if (!isSelected)
+        {
+            if (UpperScoreKey.ContainsKey(gameObject.name))
+            {
+                diceScore = 0;
+                foreach (Die die in currentDice)
+                {
+                    if (die.dieValue == UpperScoreKey[gameObject.name])
+                    {
+                        diceScore = diceScore + die.dieValue;
                     }
                 }
-            this.GetComponent<Text>().text = diceScore.ToString();
+                if (diceScore != 0)
+                {
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                } else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+                
+            }
+            if (gameObject.name == "Three of a Kind")
+            {
+
+            }
         }
     }
 
