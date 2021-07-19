@@ -37,7 +37,8 @@ sysinfo.txt
 *.unitypackage
 
 co_yahtzee.app*
-Assets/Photon*
+Assets/Photon/
+Assets/Photon
 Logs/
 
 .DS_Store
