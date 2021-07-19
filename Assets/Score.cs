@@ -49,23 +49,17 @@ public class Score : MonoBehaviour
 
     public void calculateScore()
     {
+        diceScore = 0;
         if (!isSelected)
         {
-            //loop to populate diceCountValue dictionary
-            foreach (Die die in currentDice)
-            {
-                diceValueCount[die.dieValue] = diceValueCount[die.dieValue] + 1;
-            }
 
-            foreach (KeyValuePair<int, int> kvp in diceValueCount)
-            {
-               print("Key = " + kvp.Key + ", Value = " + kvp.Value);
-            }
+            //foreach (KeyValuePair<int, int> kvp in diceValueCount)
+            //{
+           //    print("There are " + kvp.Value + " die with the value " + kvp.Key);
+            //}
 
             if (UpperScoreKey.ContainsKey(gameObject.name))
             {
-                diceScore = 0;
-
 
                 foreach (Die die in currentDice)
                 {
@@ -85,6 +79,62 @@ public class Score : MonoBehaviour
             }
             if (gameObject.name == "Three of a Kind")
             {
+                if (diceValueCount.ContainsValue(3))
+                {
+
+
+                    foreach (Die die in currentDice)
+                    {
+                        diceScore = diceScore + die.dieValue;
+                    }
+
+                    if (diceScore != 0)
+                    {
+                        this.GetComponent<Text>().text = diceScore.ToString();
+                    }
+                    else
+                    {
+                        this.GetComponent<Text>().text = null;
+                    }
+                }
+
+            }
+            if (gameObject.name == "Four of a Kind")
+            {
+                if (diceValueCount.ContainsValue(4))
+                {
+
+                    foreach (Die die in currentDice)
+                    {
+                        diceScore = diceScore + die.dieValue;
+                    }
+
+                    if (diceScore != 0)
+                    {
+                        this.GetComponent<Text>().text = diceScore.ToString();
+                    }
+                    else
+                    {
+                        this.GetComponent<Text>().text = null;
+                    }
+                }
+
+            }
+            if (gameObject.name == "Full House")
+            {
+                if (diceValueCount.ContainsValue(3) && diceValueCount.ContainsValue(2))
+                {
+                    diceScore = 25;
+
+                    if (diceScore != 0)
+                    {
+                        this.GetComponent<Text>().text = diceScore.ToString();
+                    }
+                    else
+                    {
+                        this.GetComponent<Text>().text = null;
+                    }
+                }
 
             }
         }
@@ -97,12 +147,17 @@ public class Score : MonoBehaviour
         {
             diceValueCount[key] = 0;
         }
+        //loop to populate diceCountValue dictionary
+        foreach (Die die in currentDice)
+        {
+            diceValueCount[die.dieValue] = diceValueCount[die.dieValue] + 1;
+        }
     }
 
 
     void Update()
     {
-        //resetDiceValueCount();
+        resetDiceValueCount();
         calculateScore();
     }
 }
