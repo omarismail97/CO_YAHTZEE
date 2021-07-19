@@ -8,10 +8,13 @@ public class DiceController : MonoBehaviour
     public Sprite[] diceImages = new Sprite[6];
     public Die[] diceObjects = new Die[5];
     public static int rollCounter = 100;
+    private static TranscriptController transcriptController;
 
     // Start is called before the first frame update
     void Start()
     {
+        //grabs the transcript controller and populates the transcript controller
+        transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
     }
 
     // Update is called once per frame
@@ -39,6 +42,8 @@ public class DiceController : MonoBehaviour
         else {
             print("No more rerolls!");
         }
+
+        transcriptController.SendMessageToTranscript("Rerolled Dice");
     }
 
     //include UI to show number of rolls left

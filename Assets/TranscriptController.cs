@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TranscriptController : MonoBehaviour
 {
-    public int maxMessages = 25;
+    public int maxMessages = 50;
     public GameObject chatPanel, textObject;
     [SerializeField] List<TranscriptMessage> messageList = new List<TranscriptMessage>();
 
