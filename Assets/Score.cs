@@ -6,7 +6,13 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public bool isSelected = false;
+    //public DiceController diceController = GameObject.Find("DiceController").GetComponent("DIceController");
+    public Die[] currentDice = new Die[5];
 
+    void Start()
+    {
+        print(gameObject.name);
+    }
     public void selectScore()
     {
         isSelected = true;
