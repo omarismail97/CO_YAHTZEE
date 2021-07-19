@@ -6,15 +6,25 @@ using UnityEngine.UI;
 /* Testing changes to Git */
 public class GameController : MonoBehaviour
 {
+    //Login Page variables
+    public GameObject gmObjInputField;
+    public Text txtWelcome;
+    //
+
     public Sprite[] diceImages = new Sprite[6];
     public GameObject[] diceObjects = new GameObject[5];
     
+
     //initialize dice
     private int[] dieValues = { 1, 2, 3, 4, 5};
 
     // Start is called before the first frame update
     void Start()
     {
+        //
+        txtWelcome.GetComponent<Text>().text = "Welcome " + Login.playerName + " to Yahtzee++";
+        //
+
         rollDice();
     }
 
