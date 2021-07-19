@@ -13,6 +13,15 @@ public class Score : MonoBehaviour
     public static Die[] currentDice = new Die[5];
     private static TranscriptController transcriptController;
     public int diceScore = 0;
+    private Dictionary<string, int> UpperScoreKey = new Dictionary<string, int>()
+        {
+            { "Ones", 1 },
+            { "Twos", 2 },
+            {"Threes", 3},
+            { "Fours", 4 },
+            {"Fives", 5 },
+            {"Sixes", 6 }
+        };
 
     void Start()
     {
@@ -27,47 +36,14 @@ public class Score : MonoBehaviour
 
     public void calculateScore()
     {
-        if (! isSelected)
-        {
-            print(gameObject.name == "Ones");
-            if (gameObject.name == "Ones")
-            {
-                diceScore = 0;
-                foreach (Die die in currentDice)
-                {
-                    if (die.dieValue == 1)
-                    {
-                        diceScore = diceScore + die.dieValue;
+        if (! isSelected && UpperScoreKey.ContainsKey(gameObject.name)) {
+            diceScore = 0;
+            foreach (Die die in currentDice){
+                if (die.dieValue == UpperScoreKey[gameObject.name] ){
+                    diceScore = diceScore + die.dieValue;
                     }
                 }
-                this.GetComponent<Text>().text = diceScore.ToString();
-            }
-            if (gameObject.name == "Twos")
-            {
-                diceScore = 0;
-                foreach (Die die in currentDice)
-                {
-                    if (die.dieValue == 2)
-                    {
-                        diceScore = diceScore + die.dieValue;
-                    }
-                }
-                this.GetComponent<Text>().text = diceScore.ToString();
-
-            }
-            if (gameObject.name == "Threes")
-            {
-                diceScore = 0;
-                foreach (Die die in currentDice)
-                {
-                    if (die.dieValue == 3)
-                    {
-                        diceScore = diceScore + die.dieValue;
-                    }
-                }
-                this.GetComponent<Text>().text = diceScore.ToString();
-
-            }
+            this.GetComponent<Text>().text = diceScore.ToString();
         }
     }
 
