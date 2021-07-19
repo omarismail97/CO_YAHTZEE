@@ -89,7 +89,7 @@ public class MainMPGame : MonoBehaviourPunCallbacks
         }
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+   /* public override void OnPlayerEnteredRoom(Player newPlayer)
     {
        if(PhotonNetwork.CurrentRoom.PlayerCount == MaxPlayersPerRoom)
         {
@@ -100,7 +100,7 @@ public class MainMPGame : MonoBehaviourPunCallbacks
 
             PhotonNetwork.LoadLevel("SampleScene");
         }
-    }
+    }*/
     // Start is called before the first frame update
     void Start()
     {
