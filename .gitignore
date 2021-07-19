@@ -38,8 +38,7 @@ sysinfo.txt
 
 co_yahtzee.app*
 Assets/Photon*
-
-Logs/*
+Logs/
 
 .DS_Store
 .DS_Store
