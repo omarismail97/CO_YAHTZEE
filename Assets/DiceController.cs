@@ -43,7 +43,7 @@ public class DiceController : MonoBehaviour
             print("No more rerolls!");
         }
 
-        transcriptController.SendMessageToTranscript("Rerolled Dice");
+        transcriptController.SendMessageToTranscript("Rerolled Dice -- Rolls Left: " + rollCounter);
     }
 
     //include UI to show number of rolls left
