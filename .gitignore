@@ -36,5 +36,10 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+co_yahtzee.app*
+Assets/Photon*
+
+Logs/*
+
 .DS_Store
 .DS_Store
