@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- namespace Yahtzee.Model
-{
+ //namespace Yahtzee.Model
+//{
 
     public class Player : MonoBehaviour
     {
@@ -45,4 +45,4 @@ using UnityEngine;
         }
     }
 
-}
+//}
