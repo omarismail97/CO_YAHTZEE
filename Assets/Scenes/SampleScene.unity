@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.15, y: -63.59}
+  m_AnchoredPosition: {x: 231.15, y: 0}
   m_SizeDelta: {x: 462.3, y: 731.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23068329
@@ -2055,8 +2055,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 1.75
+    height: 0.58
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2380,8 +2380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79.7, y: -362.02982}
-  m_SizeDelta: {x: -160.56, y: 574.58}
+  m_AnchoredPosition: {x: -109.19, y: -362.02982}
+  m_SizeDelta: {x: -219.54, y: 574.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663016493
 MonoBehaviour:
@@ -3230,7 +3230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.95, y: 0.18}
+  m_AnchoredPosition: {x: -0.05, y: 0.12}
   m_SizeDelta: {x: 1277.3743, y: 791.7567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898990572
@@ -4121,7 +4121,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 0
+<<<<<<< HEAD
   diceController: {fileID: 0}
+=======
+  diceController: {fileID: 2086239509}
+>>>>>>> 847d39e77c1316b18da8ac2d443054ebfd75469b
 --- !u!4 &1379067078
 Transform:
   m_ObjectHideFlags: 0
@@ -4267,8 +4271,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 100.01001, y: -362.02982}
-  m_SizeDelta: {x: -200.02, y: 574.58}
+  m_AnchoredPosition: {x: 121.67001, y: -362.02982}
+  m_SizeDelta: {x: -243.34, y: 574.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409057663
 MonoBehaviour:

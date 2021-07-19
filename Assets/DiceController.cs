@@ -7,7 +7,7 @@ public class DiceController : MonoBehaviour
 {
     public Sprite[] diceImages = new Sprite[6];
     public Die[] diceObjects = new Die[5];
-    public int rollCounter = 3;
+    public int rollCounter = 100;
 
     // Start is called before the first frame update
     void Start()
