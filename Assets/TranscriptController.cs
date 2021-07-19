@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TranscriptController : MonoBehaviour
 {
-    private static int maxMessages = 50;
+    public static int maxMessages = 1000000;
     public GameObject chatPanel, textObject;
     [SerializeField] List<TranscriptMessage> messageList = new List<TranscriptMessage>();
 
@@ -20,7 +20,8 @@ public class TranscriptController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        ChatController chatController = GameObject.Find("ChatController").GetComponent<ChatController>();
+        if (!chatController.chatBox.isFocused && Input.GetKeyDown(KeyCode.Space))
         {
             SendMessageToTranscript("You pressed the space key!");
         }
