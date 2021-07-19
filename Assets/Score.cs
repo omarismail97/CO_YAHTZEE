@@ -12,6 +12,15 @@ public class Score : MonoBehaviour
     public static DiceController diceController;
     public static Die[] currentDice = new Die[5];
     private static TranscriptController transcriptController;
+    private Dictionary<int, int> diceValueCount = new Dictionary<int, int>()
+        {
+                {1, 0 },
+                {2, 0 },
+                {3, 0 },
+                {4 ,0 },
+                {5, 0 },
+                {6, 0 }
+        };
     public int diceScore = 0;
     private Dictionary<string, int> UpperScoreKey = new Dictionary<string, int>()
         {
@@ -42,9 +51,22 @@ public class Score : MonoBehaviour
     {
         if (!isSelected)
         {
+            //loop to populate diceCountValue dictionary
+            foreach (Die die in currentDice)
+            {
+                diceValueCount[die.dieValue] = diceValueCount[die.dieValue] + 1;
+            }
+
+            foreach (KeyValuePair<int, int> kvp in diceValueCount)
+            {
+               print("Key = " + kvp.Key + ", Value = " + kvp.Value);
+            }
+
             if (UpperScoreKey.ContainsKey(gameObject.name))
             {
                 diceScore = 0;
+
+
                 foreach (Die die in currentDice)
                 {
                     if (die.dieValue == UpperScoreKey[gameObject.name])
@@ -68,9 +90,19 @@ public class Score : MonoBehaviour
         }
     }
 
+    public void resetDiceValueCount()
+    {
+        List<int> keys = new List<int>(diceValueCount.Keys);
+        foreach (int key in keys)
+        {
+            diceValueCount[key] = 0;
+        }
+    }
+
 
     void Update()
     {
+        //resetDiceValueCount();
         calculateScore();
     }
 }
