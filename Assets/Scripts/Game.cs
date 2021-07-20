@@ -26,7 +26,7 @@ public class Game : MonoBehaviour
         txtPlayerCount.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
 
         transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
-        transcriptController.SendMessageToTranscript("New Game by : " + Login.playerName);
+        transcriptController.SendMessageToTranscript("New Game by : " + Login.playerName, TranscriptMessage.SubsystemType.game);
 
         //test - find other users
         Debug.Log("Total players: " + PhotonNetwork.CurrentRoom.PlayerCount.ToString());
