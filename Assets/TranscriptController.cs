@@ -9,7 +9,7 @@ public class TranscriptController : MonoBehaviour
     public static int maxMessages = 1000000;
     public GameObject chatPanel, textObject;
     [SerializeField] List<TranscriptMessage> messageList = new List<TranscriptMessage>();
-    public Color login, chat, dice, scorecard, turn, player, transcript, game;
+    public Color login, chat, dice, scorecard, score, turn, player, transcript, game;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,10 @@ public class TranscriptController : MonoBehaviour
                 break;
             case TranscriptMessage.SubsystemType.scorecard:
                 color = scorecard;
-                break;    
+                break;   
+            case TranscriptMessage.SubsystemType.score:
+                color = score;
+                break;  
             case TranscriptMessage.SubsystemType.turn:
                 color = turn;
                 break;
@@ -91,6 +94,7 @@ public class TranscriptMessage
         chat,
         dice,
         scorecard,
+        score,
         turn, 
         player, 
         transcript,
