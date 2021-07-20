@@ -32,9 +32,10 @@ public class ChatController : MonoBehaviour
             {
                 TranscriptController transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
                 SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
-                chatBox.text = "";
+                
 
-                transcriptController.SendMessageToTranscript(username + " sent a message in the chat", TranscriptMessage.SubsystemType.chat);
+                transcriptController.SendMessageToTranscript(username + " sent a message in the chat: " + chatBox.text, TranscriptMessage.SubsystemType.chat);
+                chatBox.text = "";
             }
         }
         else 
