@@ -36,18 +36,20 @@ public class Score : MonoBehaviour
     {
         diceController = GameObject.Find("DiceController").GetComponent<DiceController>();
         currentDice = diceController.diceObjects;
+        transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
     }
     public void selectScore()
     {
         if ( ! string.IsNullOrEmpty(this.GetComponent<Text>().text))
         {
             isSelected = true;
+            transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot");
         }
-
     }
 
     public void calculateScore()
     {
+        transcriptController.SendMessageToTranscript("Calculating Score");
         diceScore = 0;
         if (!isSelected)
         {
@@ -185,7 +187,5 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        resetDiceValueCount();
-        calculateScore();
     }
 }

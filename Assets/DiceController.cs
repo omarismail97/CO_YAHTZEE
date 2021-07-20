@@ -9,12 +9,14 @@ public class DiceController : MonoBehaviour
     public Die[] diceObjects = new Die[5];
     public static int rollCounter = 100;
     private static TranscriptController transcriptController;
+    public ScorecardController scorecardController;
 
     // Start is called before the first frame update
     void Start()
     {
         //grabs the transcript controller and populates the transcript controller
         transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
+        scorecardController = GameObject.Find("ScorecardController").GetComponent<ScorecardController>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class DiceController : MonoBehaviour
         }
 
         transcriptController.SendMessageToTranscript("Rerolled Dice -- Rolls Left: " + rollCounter);
+        scorecardController.calculateScores();
     }
 
     //include UI to show number of rolls left
