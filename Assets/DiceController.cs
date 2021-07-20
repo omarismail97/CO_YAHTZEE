@@ -7,7 +7,7 @@ public class DiceController : MonoBehaviour
 {
     public Sprite[] diceImages = new Sprite[6];
     public Die[] diceObjects = new Die[5];
-    public static int rollCounter = 100;
+    public static int rollCounter = 3;
     private static TranscriptController transcriptController;
     public ScorecardController scorecardController;
 
@@ -42,12 +42,18 @@ public class DiceController : MonoBehaviour
             rollCounter -= 1;
         }
         else {
-            print("No more rerolls!");
+            transcriptController.SendMessageToTranscript("No more rerolls! Please select a score to end your turn"
+                , TranscriptMessage.SubsystemType.dice);
         }
 
         transcriptController.SendMessageToTranscript("Rerolled Dice -- Rolls Left: " + rollCounter, TranscriptMessage.SubsystemType.dice);
         scorecardController.calculateScores();
     }
 
+
+    public void resetRollCounter()
+    {
+        rollCounter = 3;
+    }
     //include UI to show number of rolls left
 }

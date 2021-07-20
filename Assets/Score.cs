@@ -45,6 +45,8 @@ public class Score : MonoBehaviour
             isSelected = true;
             transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot",
                 TranscriptMessage.SubsystemType.score);
+            transcriptController.SendMessageToTranscript("Turn complete", TranscriptMessage.SubsystemType.turn);
+            diceController.resetRollCounter();
         }
     }
 
