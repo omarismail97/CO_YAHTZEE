@@ -15,12 +15,12 @@ public class Die : MonoBehaviour
 
         if (isHold)
         {
-            transcriptController.SendMessageToTranscript("Selecting die");
+            transcriptController.SendMessageToTranscript("Holding Die");
 
         }
         if(!isHold)
         {
-            transcriptController.SendMessageToTranscript("Unselecting die");
+            transcriptController.SendMessageToTranscript("Releasing Die");
         }
     }
 }
