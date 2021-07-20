@@ -11,7 +11,8 @@ public class Game : MonoBehaviour
     public Text txtUserName;
     public Text txtPlayerCount;
     public InputField chatInputField;
-    
+    private static TranscriptController transcriptController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,9 @@ public class Game : MonoBehaviour
         }
      //   chatInputField.text = Login.playerName;
         txtPlayerCount.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+
+        transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
+        transcriptController.SendMessageToTranscript("New Game by : " + Login.playerName);
 
         //test - find other users
         Debug.Log("Total players: " + PhotonNetwork.CurrentRoom.PlayerCount.ToString());
