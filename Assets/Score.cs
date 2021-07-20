@@ -24,10 +24,10 @@ public class Score : MonoBehaviour
     public int diceScore = 0;
     private Dictionary<string, int> UpperScoreKey = new Dictionary<string, int>()
         {
-            { "Ones", 1 },
-            { "Twos", 2 },
+            {"Ones", 1 },
+            {"Twos", 2 },
             {"Threes", 3},
-            { "Fours", 4 },
+            {"Fours", 4 },
             {"Fives", 5 },
             {"Sixes", 6 }
         };
@@ -36,7 +36,6 @@ public class Score : MonoBehaviour
     {
         diceController = GameObject.Find("DiceController").GetComponent<DiceController>();
         currentDice = diceController.diceObjects;
-        print(gameObject.name);
     }
     public void selectScore()
     {
@@ -52,12 +51,6 @@ public class Score : MonoBehaviour
         diceScore = 0;
         if (!isSelected)
         {
-
-            //foreach (KeyValuePair<int, int> kvp in diceValueCount)
-            //{
-           //    print("There are " + kvp.Value + " die with the value " + kvp.Key);
-            //}
-
             if (UpperScoreKey.ContainsKey(gameObject.name))
             {
                 foreach (Die die in currentDice)
@@ -148,6 +141,15 @@ public class Score : MonoBehaviour
                     this.GetComponent<Text>().text = null;
                 }
             }
+            if (gameObject.name == "Chance")
+            {
+                foreach (Die die in currentDice)
+                {
+                    diceScore = diceScore + die.dieValue;
+                }
+                this.GetComponent<Text>().text = diceScore.ToString();
+            }
+
             if (gameObject.name == "Yahtzee")
             {
                 if (diceValueCount.ContainsValue(5))
@@ -160,6 +162,9 @@ public class Score : MonoBehaviour
                     this.GetComponent<Text>().text = null;
                 }
             }
+
+            //add logic that if everything but Yahtzee is filled out, you have to select Yahtzee and get a 0
+            //adjust logic to allow selection of 0 scores but add a prompt asking user if they are sure
         }
     }
 
