@@ -40,7 +40,7 @@ public class Score : MonoBehaviour
     }
     public void selectScore()
     {
-        if ( ! string.IsNullOrEmpty(this.GetComponent<Text>().text))
+        if ( !isSelected &&! string.IsNullOrEmpty(this.GetComponent<Text>().text))
         {
             isSelected = true;
             transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot",
