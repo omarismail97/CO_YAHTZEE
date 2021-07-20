@@ -34,7 +34,7 @@ public class ChatController : MonoBehaviour
                 SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                 chatBox.text = "";
 
-                transcriptController.SendMessageToTranscript(username + " sent a message in the chat");
+                transcriptController.SendMessageToTranscript(username + " sent a message in the chat", TranscriptMessage.SubsystemType.chat);
             }
         }
         else 

@@ -4623,7 +4623,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d460e2edbbce6d448c3ff3eb5c1873b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1379067078
 Transform:
   m_ObjectHideFlags: 0
@@ -6949,6 +6965,14 @@ MonoBehaviour:
   chatPanel: {fileID: 131725345}
   textObject: {fileID: 605336837060382225, guid: 3cdfb367d295a425096debce0430160d, type: 3}
   messageList: []
+  login: {r: 0.8401282, g: 0.9056604, b: 0.31185475, a: 1}
+  chat: {r: 0.4362763, g: 0.7169812, b: 0.51884466, a: 1}
+  dice: {r: 1, g: 1, b: 1, a: 1}
+  scorecard: {r: 1, g: 0.43867922, b: 0.43867922, a: 1}
+  turn: {r: 0, g: 0, b: 0, a: 0}
+  player: {r: 1, g: 0.4490608, b: 0, a: 1}
+  transcript: {r: 0.23113209, g: 0.30075708, b: 1, a: 1}
+  game: {r: 0.7956128, g: 0.12517802, b: 0.9150943, a: 1}
 --- !u!4 &2048570670
 Transform:
   m_ObjectHideFlags: 0
@@ -7204,6 +7228,7 @@ MonoBehaviour:
   - {fileID: 53746970}
   - {fileID: 79058652}
   - {fileID: 258202783}
+  scorecardController: {fileID: 1379067077}
 --- !u!4 &2086239510
 Transform:
   m_ObjectHideFlags: 0

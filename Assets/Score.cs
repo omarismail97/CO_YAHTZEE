@@ -43,13 +43,14 @@ public class Score : MonoBehaviour
         if ( ! string.IsNullOrEmpty(this.GetComponent<Text>().text))
         {
             isSelected = true;
-            transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot");
+            transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot",
+                TranscriptMessage.SubsystemType.scorecard);
         }
     }
 
     public void calculateScore()
     {
-        transcriptController.SendMessageToTranscript("Calculating Score");
+
         diceScore = 0;
         if (!isSelected)
         {

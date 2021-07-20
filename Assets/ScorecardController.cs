@@ -34,16 +34,11 @@ public class ScorecardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(currentDice.Length);
-        //foreach (Die die in currentDice)
-        //{
-        //    print(die.dieValue);
-        //}
     }
 
     public void calculateScores()
     {
-        transcriptController.SendMessageToTranscript("Calculating Scores");
+        transcriptController.SendMessageToTranscript("Calculating Scores", TranscriptMessage.SubsystemType.scorecard);
         foreach (Score score in scoreList)
         {
             score.resetDiceValueCount();
