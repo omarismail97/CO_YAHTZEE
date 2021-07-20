@@ -2316,7 +2316,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.043028
+  orthographic size: 6.0613613
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6494,7 +6494,7 @@ MonoBehaviour:
   dice: {r: 1, g: 1, b: 1, a: 1}
   scorecard: {r: 1, g: 0.43867922, b: 0.43867922, a: 1}
   score: {r: 0, g: 0.9150943, b: 0.78170204, a: 1}
-  turn: {r: 0, g: 0, b: 0, a: 0}
+  turn: {r: 0.9811321, g: 0.46150962, b: 0.94509804, a: 1}
   player: {r: 1, g: 0.4490608, b: 0, a: 1}
   transcript: {r: 0.23113209, g: 0.30075708, b: 1, a: 1}
   game: {r: 0.7956128, g: 0.12517802, b: 0.9150943, a: 1}
