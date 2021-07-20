@@ -24,10 +24,10 @@ public class Score : MonoBehaviour
     public int diceScore = 0;
     private Dictionary<string, int> UpperScoreKey = new Dictionary<string, int>()
         {
-            { "Ones", 1 },
-            { "Twos", 2 },
+            {"Ones", 1 },
+            {"Twos", 2 },
             {"Threes", 3},
-            { "Fours", 4 },
+            {"Fours", 4 },
             {"Fives", 5 },
             {"Sixes", 6 }
         };
@@ -36,31 +36,25 @@ public class Score : MonoBehaviour
     {
         diceController = GameObject.Find("DiceController").GetComponent<DiceController>();
         currentDice = diceController.diceObjects;
-        print(gameObject.name);
+        transcriptController = GameObject.Find("TranscriptController").GetComponent<TranscriptController>();
     }
     public void selectScore()
     {
         if ( ! string.IsNullOrEmpty(this.GetComponent<Text>().text))
         {
             isSelected = true;
+            transcriptController.SendMessageToTranscript("Selected Score of " + this.GetComponent<Text>().text + " for " + gameObject.name + " Slot");
         }
-
     }
 
     public void calculateScore()
     {
+        transcriptController.SendMessageToTranscript("Calculating Score");
         diceScore = 0;
         if (!isSelected)
         {
-
-            //foreach (KeyValuePair<int, int> kvp in diceValueCount)
-            //{
-           //    print("There are " + kvp.Value + " die with the value " + kvp.Key);
-            //}
-
             if (UpperScoreKey.ContainsKey(gameObject.name))
             {
-
                 foreach (Die die in currentDice)
                 {
                     if (die.dieValue == UpperScoreKey[gameObject.name])
@@ -82,61 +76,97 @@ public class Score : MonoBehaviour
                 if (diceValueCount.ContainsValue(3))
                 {
 
-
                     foreach (Die die in currentDice)
                     {
                         diceScore = diceScore + die.dieValue;
                     }
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
-
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
             if (gameObject.name == "Four of a Kind")
             {
                 if (diceValueCount.ContainsValue(4))
                 {
-
                     foreach (Die die in currentDice)
                     {
                         diceScore = diceScore + die.dieValue;
                     }
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
-
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
             if (gameObject.name == "Full House")
             {
                 if (diceValueCount.ContainsValue(3) && diceValueCount.ContainsValue(2))
                 {
                     diceScore = 25;
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
-
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
+
+            if (gameObject.name == "Small Straight")
+            {
+                if ((diceValueCount[1] >= 1 && diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1) |
+                    (diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1) |
+                    (diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1 && diceValueCount[6] >= 1))
+                {
+                    diceScore = 30;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
+            if (gameObject.name == "Large Straight")
+            {
+                if ((diceValueCount[1] >= 1 && diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1) |
+                    (diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1 && diceValueCount[6] >= 1))
+                {
+                    diceScore = 40;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
+            if (gameObject.name == "Chance")
+            {
+                foreach (Die die in currentDice)
+                {
+                    diceScore = diceScore + die.dieValue;
+                }
+                this.GetComponent<Text>().text = diceScore.ToString();
+            }
+
+            if (gameObject.name == "Yahtzee")
+            {
+                if (diceValueCount.ContainsValue(5))
+                {
+                    diceScore = 50;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
+
+            //add logic that if everything but Yahtzee is filled out, you have to select Yahtzee and get a 0
+            //adjust logic to allow selection of 0 scores but add a prompt asking user if they are sure
         }
     }
 
@@ -157,7 +187,5 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        resetDiceValueCount();
-        calculateScore();
     }
 }
