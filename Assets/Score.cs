@@ -60,7 +60,6 @@ public class Score : MonoBehaviour
 
             if (UpperScoreKey.ContainsKey(gameObject.name))
             {
-
                 foreach (Die die in currentDice)
                 {
                     if (die.dieValue == UpperScoreKey[gameObject.name])
@@ -82,60 +81,84 @@ public class Score : MonoBehaviour
                 if (diceValueCount.ContainsValue(3))
                 {
 
-
                     foreach (Die die in currentDice)
                     {
                         diceScore = diceScore + die.dieValue;
                     }
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
-
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
             if (gameObject.name == "Four of a Kind")
             {
                 if (diceValueCount.ContainsValue(4))
                 {
-
                     foreach (Die die in currentDice)
                     {
                         diceScore = diceScore + die.dieValue;
                     }
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
-
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
             if (gameObject.name == "Full House")
             {
                 if (diceValueCount.ContainsValue(3) && diceValueCount.ContainsValue(2))
                 {
                     diceScore = 25;
-
-                    if (diceScore != 0)
-                    {
-                        this.GetComponent<Text>().text = diceScore.ToString();
-                    }
-                    else
-                    {
-                        this.GetComponent<Text>().text = null;
-                    }
+                    this.GetComponent<Text>().text = diceScore.ToString();
                 }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
 
+            if (gameObject.name == "Small Straight")
+            {
+                if ((diceValueCount[1] >= 1 && diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1) |
+                    (diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1) |
+                    (diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1 && diceValueCount[6] >= 1))
+                {
+                    diceScore = 30;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
+            if (gameObject.name == "Large Straight")
+            {
+                if ((diceValueCount[1] >= 1 && diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1) |
+                    (diceValueCount[2] >= 1 && diceValueCount[3] >= 1 && diceValueCount[4] >= 1 && diceValueCount[5] >= 1 && diceValueCount[6] >= 1))
+                {
+                    diceScore = 40;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
+            }
+            if (gameObject.name == "Yahtzee")
+            {
+                if (diceValueCount.ContainsValue(5))
+                {
+                    diceScore = 50;
+                    this.GetComponent<Text>().text = diceScore.ToString();
+                }
+                else
+                {
+                    this.GetComponent<Text>().text = null;
+                }
             }
         }
     }
